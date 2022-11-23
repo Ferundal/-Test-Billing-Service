@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "udoScBTUvpcQT4KM4XLREMBN1Gv0w6esmvRHLNajCopXZUIOkxJP1C5OTATGoUT3rjwPiL4/ZlajdxX6Un5bvQ==",
+  "dgSpecHash": "0dQVw1udCGVRooUS8VgnKwDQCOOTmpQlZG96vN0Ox3oDnTBI/UoXwYvz4b43pECodvYnMHq0oKbwgBSEWvqi2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\ferun\\RiderProjects\\Billing\\Billing\\Billing.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\ferun\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
     "C:\\Users\\ferun\\.nuget\\packages\\microsoft.extensions.options\\3.0.3\\microsoft.extensions.options.3.0.3.nupkg.sha512",
     "C:\\Users\\ferun\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.3\\microsoft.extensions.primitives.3.0.3.nupkg.sha512",
+    "C:\\Users\\ferun\\.nuget\\packages\\newtonsoft.json\\13.0.2-beta3\\newtonsoft.json.13.0.2-beta3.nupkg.sha512",
     "C:\\Users\\ferun\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []

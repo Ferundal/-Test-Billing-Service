@@ -27,3 +27,5 @@ C:\Users\ferun\RiderProjects\Billing\Billing\obj\Debug\net6.0\refint\Billing.dll
 C:\Users\ferun\RiderProjects\Billing\Billing\obj\Debug\net6.0\Billing.pdb
 C:\Users\ferun\RiderProjects\Billing\Billing\obj\Debug\net6.0\Billing.genruntimeconfig.cache
 C:\Users\ferun\RiderProjects\Billing\Billing\obj\Debug\net6.0\ref\Billing.dll
+C:\Users\ferun\RiderProjects\Billing\Billing\bin\Debug\net6.0\userProfiles.json
+C:\Users\ferun\RiderProjects\Billing\Billing\bin\Debug\net6.0\Newtonsoft.Json.dll
