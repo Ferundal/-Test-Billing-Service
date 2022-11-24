@@ -10,24 +10,24 @@ public class BillingService : Billing.BillingBase
 {
     private readonly ILogger<BillingService> _logger;
 
+    private List<User> _users;
+
     public BillingService(ILogger<BillingService> logger)
     {
         _logger = logger;
         string jsonUserProfiles = File.ReadAllText("userProfiles.json", Encoding.Default);
-        _userProfiles = JsonConvert.DeserializeObject<List<UserProfile>>(jsonUserProfiles);
-        if (_userProfiles == null)
+        _users = JsonConvert.DeserializeObject<List<User>>(jsonUserProfiles);
+        if (_users == null)
         {
-            _userProfiles = new List<UserProfile>();
+            _users = new List<User>();
         }
     }
-
-    private List<UserProfile> _userProfiles;
-
+    
     public override async Task ListUsers(None request, IServerStreamWriter<UserProfile> responseStream, ServerCallContext context)
     {
-        foreach (var userProfile in _userProfiles)
+        foreach (var user in _users)
         {
-            await responseStream.WriteAsync(userProfile);
+            await responseStream.WriteAsync(user.ToUserProfile());
         }
     }
 
