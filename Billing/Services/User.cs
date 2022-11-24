@@ -2,9 +2,9 @@
 
 public class User
 {
-    private long Amount;
-    private string Name;
-    private long Rating;
+    public long Amount;
+    public string Name;
+    public long Rating;
 
     public UserProfile ToUserProfile()
     {
