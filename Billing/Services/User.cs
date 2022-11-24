@@ -12,8 +12,8 @@ public class User
         var userProfile = new UserProfile();
         userProfile.Amount = Amount;
         userProfile.Name = Name;
-        string [] words = { "Jhon", "Bob" };
-        userProfile.Name = string.Join(",", words[^1]);
+        string [] words = { "Jhon", "Bob", "Raule" };
+        userProfile.Name = string.Join(",", words[1..^1]);
         return userProfile;
         
     }
