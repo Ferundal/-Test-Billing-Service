@@ -5,6 +5,7 @@ public class User
     public long Amount;
     public string Name;
     public long Rating;
+    
 
     public UserProfile ToUserProfile()
     {
