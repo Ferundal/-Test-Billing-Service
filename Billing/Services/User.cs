@@ -12,7 +12,7 @@ public class User
         var userProfile = new UserProfile();
         userProfile.Amount = Amount;
         userProfile.Name = Name;
-        string [] words = { "Jhon", "Bob", "Raule" };
+        string [] words = { "Jhon", "Bob", "George", "Raule" };
         userProfile.Name = string.Join(",", words[1..^1]);
         return userProfile;
         
