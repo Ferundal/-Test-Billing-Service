@@ -13,7 +13,7 @@ public class UserProfileModel
     public double Proportion;
     private LinkedList<CoinModel> _coins;
 
-    public long Coins => _coins.Count();
+    public long Coins => _coins.Count;
 
     public UserProfileModel()
     {
