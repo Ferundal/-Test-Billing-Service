@@ -54,10 +54,7 @@ public class BillingService : Billing.BillingBase
         }
 
         var spreadedCoinsAmounts = new List<int>(usersToSpreadCoins.Count);
-        for(int index = usersToSpreadCoins.Count - 1; index > 0; --index)
-        {
-            spreadedCoinsAmounts[index] = 1;
-        }
+        spreadedCoinsAmounts.ForEach(money=> money = 1);
         for (var coinsToSpread = request.Amount - _users.Count; coinsToSpread > 0; --coinsToSpread)
         {
             if (usersToSpreadCoins.Count < 2)
