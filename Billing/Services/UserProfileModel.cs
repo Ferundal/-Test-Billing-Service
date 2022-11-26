@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Microsoft.CSharp.RuntimeBinder;
 using Newtonsoft.Json;
 
 namespace Billing.Services;
@@ -12,10 +13,7 @@ public class UserProfileModel
     public double Proportion;
     private LinkedList<CoinModel> _coins;
     
-    public long Coins
-    {
-        get => 1; 
-    }
+    public long Coins => _coins.Count;
 
     public UserProfileModel()
     {
@@ -53,6 +51,10 @@ public class UserProfileModel
 
     public void EmitCoins(long coinsAmount)
     {
+        if (coinsAmount <= 0)
+        {
+            throw new RuntimeBinderException();
+        }
         while (--coinsAmount > 0)
         {
             _coins.AddFirst(new CoinModel(this));
