@@ -46,17 +46,16 @@ public class UserProfileModel
     public UserProfile ToUserProfile()
     {
         var userProfile = new UserProfile();
-        userProfile.Amount = _coins.Count;
+        userProfile.Amount = Coins;
         userProfile.Name = Name;
         return userProfile;
     }
 
     public void EmitCoins(long coinsAmount)
     {
-        while (coinsAmount > 0)
+        while (--coinsAmount > 0)
         {
             _coins.AddFirst(new CoinModel(this));
-            coinsAmount--;
         }
     }
 
