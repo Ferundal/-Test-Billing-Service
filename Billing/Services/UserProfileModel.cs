@@ -12,8 +12,19 @@ public class UserProfileModel
     public long Rating;
     public double Proportion;
     private LinkedList<CoinModel> _coins;
-    
-    public long Coins => _coins.Count;
+
+    public long Coins
+    {
+        get
+        {
+            if (_coins.Count == 0)
+            {
+                throw new RuntimeBinderException("WTF");
+            }
+
+            return _coins.Count;
+        }
+    }
 
     public UserProfileModel()
     {

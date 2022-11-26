@@ -23,7 +23,6 @@ public class BillingService : Billing.BillingBase
     {
         foreach (var user in _users)
         {
-            user.EmitCoins(1);
             await responseStream.WriteAsync(user.ToUserProfile());
         }
     }
