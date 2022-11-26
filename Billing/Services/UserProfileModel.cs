@@ -91,9 +91,10 @@ public class UserProfileModel
         }
 
         CoinModel longestCoin = _coins.First.Value;
-        LinkedListNode<CoinModel> linkedListNode = _coins.First.Next;
+        LinkedListNode<CoinModel> linkedListNode = _coins.First;
         do
         {
+            linkedListNode = linkedListNode.Next;
             if (linkedListNode.Value.HistoryLength > longestCoin.HistoryLength)
             {
                 longestCoin = linkedListNode.Value;
