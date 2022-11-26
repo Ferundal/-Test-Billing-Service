@@ -18,7 +18,7 @@ public class UserProfileModel
     public UserProfileModel()
     {
         Name = "";
-//        _coins = new LinkedList<CoinModel>();
+        _coins = new LinkedList<CoinModel>();
     }
 
     public static List<UserProfileModel> LoadFromJson(string jsonPath)
@@ -53,7 +53,8 @@ public class UserProfileModel
     {
         while (--coinsAmount > 0)
         {
-            _coins.AddFirst(new CoinModel(this));
+            var coin = new CoinModel(this);
+            _coins.AddFirst(coin);
         }
     }
 
