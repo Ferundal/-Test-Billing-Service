@@ -11,19 +11,21 @@ public class BillingService : Billing.BillingBase
 {
     private readonly ILogger<BillingService> _logger;
 
-    private List<UserProfileModel> _users;
+    private static List<UserProfileModel> _users = null;
 
     public BillingService(ILogger<BillingService> logger)
     {
         _logger = logger;
-        _users = UserProfileModel.LoadFromJson("userProfiles.json");
+        if (_users == null)
+        {
+            _users = UserProfileModel.LoadFromJson("userProfiles.json");
+        }
     }
     
     public override async Task ListUsers(None request, IServerStreamWriter<UserProfile> responseStream, ServerCallContext context)
     {
         foreach (var user in _users)
         {
-            throw new RuntimeBinderException($"{user.Coins}  or {user.ToUserProfile().Amount}");
             await responseStream.WriteAsync(user.ToUserProfile());
         }
     }
