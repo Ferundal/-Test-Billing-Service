@@ -17,6 +17,12 @@ public class UserProfileModel
         get => _coins.Count; 
     }
 
+    public UserProfileModel()
+    {
+        Name = "";
+        _coins = new LinkedList<CoinModel>();
+    }
+
     public static List<UserProfileModel> LoadFromJson(string jsonPath)
     {
         string jsonUserProfiles = File.ReadAllText(jsonPath, Encoding.Default);
