@@ -88,7 +88,7 @@ public class BillingService : Billing.BillingBase
             --coinsToSpread;
         }
 
-        throw new RuntimeBinderException(_users[0].Coins.ToString());
+        throw new RuntimeBinderException($">{_users[0].Coins.ToString()}<");
         response.Status = Response.Types.Status.Ok;
         return Task.FromResult(response);
     }
