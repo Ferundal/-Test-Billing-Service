@@ -64,7 +64,7 @@ public class BillingService : Billing.BillingBase
             }
 
             int coinReciverIndex = 0;
-            for (int index = 1; index < usersToSpreadCoins.Count - 1; ++index)
+            for (int index = 1; index < usersToSpreadCoins.Count - 1; index++)
             {
                 if (spreadedCoinsAmounts[index] * coinWeight / usersToSpreadCoins.ElementAt(index).Proportion <
                     spreadedCoinsAmounts[coinReciverIndex] * coinWeight / usersToSpreadCoins.ElementAt(coinReciverIndex).Proportion)
