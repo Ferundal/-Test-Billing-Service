@@ -14,7 +14,7 @@ public class UserProfileModel
     
     public long Coins
     {
-        get => _coins.Count; 
+        get => 1; 
     }
 
     public UserProfileModel()

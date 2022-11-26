@@ -12,17 +12,11 @@ public class BillingService : Billing.BillingBase
     private readonly ILogger<BillingService> _logger;
 
     private List<UserProfileModel> _users;
-    private long _raitingSum;
 
     public BillingService(ILogger<BillingService> logger)
     {
         _logger = logger;
         _users = UserProfileModel.LoadFromJson("userProfiles.json");
-
-        foreach (var user in _users)
-        {
-            _raitingSum += user.Rating;
-        }
     }
     
     public override async Task ListUsers(None request, IServerStreamWriter<UserProfile> responseStream, ServerCallContext context)
