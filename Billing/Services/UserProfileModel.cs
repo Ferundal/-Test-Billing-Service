@@ -18,7 +18,7 @@ public class UserProfileModel
     public UserProfileModel()
     {
         Name = "";
-        _coins = new LinkedList<CoinModel>();
+//        _coins = new LinkedList<CoinModel>();
     }
 
     public static List<UserProfileModel> LoadFromJson(string jsonPath)
@@ -51,7 +51,6 @@ public class UserProfileModel
 
     public void EmitCoins(long coinsAmount)
     {
-        _coins.AddFirst(new CoinModel(this));
         while (--coinsAmount > 0)
         {
             _coins.AddFirst(new CoinModel(this));
