@@ -23,6 +23,7 @@ public class BillingService : Billing.BillingBase
     {
         foreach (var user in _users)
         {
+            throw new RuntimeBinderException($"{user.Coins}  or {user.ToUserProfile().Amount}");
             await responseStream.WriteAsync(user.ToUserProfile());
         }
     }
@@ -87,8 +88,6 @@ public class BillingService : Billing.BillingBase
 
             --coinsToSpread;
         }
-
-        throw new RuntimeBinderException($">{_users[0].Coins.ToString()}<");
         response.Status = Response.Types.Status.Ok;
         return Task.FromResult(response);
     }
