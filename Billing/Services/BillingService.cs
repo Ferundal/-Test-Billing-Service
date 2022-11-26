@@ -83,6 +83,8 @@ public class BillingService : Billing.BillingBase
                 usersToSpreadCoins.RemoveAt(coinReciverIndex);
                 spreadedCoinsAmounts.RemoveAt(coinReciverIndex);
             }
+
+            --coinsToSpread;
         }
         response.Status = Response.Types.Status.Ok;
         return Task.FromResult(response);
