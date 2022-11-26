@@ -55,6 +55,10 @@ public class UserProfileModel
         {
             var coin = new CoinModel(this);
             _coins.AddFirst(coin);
+            if (_coins.Count == 0)
+            {
+                throw new RuntimeBinderException();
+            }
         }
     }
 
