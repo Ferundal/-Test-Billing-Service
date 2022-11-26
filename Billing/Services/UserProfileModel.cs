@@ -51,10 +51,11 @@ public class UserProfileModel
 
     public void EmitCoins(long coinsAmount)
     {
-        while (--coinsAmount > 0)
+        while (coinsAmount > 0)
         {
             var coin = new CoinModel(this);
             _coins.AddFirst(coin);
+            --coinsAmount;
         }
         if (_coins.Count == 0)
         {
