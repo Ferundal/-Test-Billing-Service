@@ -63,22 +63,22 @@ public class BillingService : Billing.BillingBase
                 break;
             }
 
-            int coinReciverIndex = 0;
-            for (int index = 1; index < usersToSpreadCoins.Count - 1; index++)
+            int coinReceiverIndex = 0;
+            for (int index = 1; index < spreadedCoinsAmounts.Count - 1; index++)
             {
                 if (spreadedCoinsAmounts[index] * coinWeight / usersToSpreadCoins.ElementAt(index).Proportion <
-                    spreadedCoinsAmounts[coinReciverIndex] * coinWeight / usersToSpreadCoins.ElementAt(coinReciverIndex).Proportion)
+                    spreadedCoinsAmounts[coinReceiverIndex] * coinWeight / usersToSpreadCoins.ElementAt(coinReceiverIndex).Proportion)
                 {
-                    coinReciverIndex = index;
+                    coinReceiverIndex = index;
                 }
             }
-            usersToSpreadCoins.ElementAt(coinReciverIndex).EmitCoins(1);
-            ++spreadedCoinsAmounts[coinReciverIndex];
-            if (usersToSpreadCoins.ElementAt(coinReciverIndex).Proportion >
-                spreadedCoinsAmounts[coinReciverIndex] * coinWeight)
+            usersToSpreadCoins.ElementAt(coinReceiverIndex).EmitCoins(1);
+            ++spreadedCoinsAmounts[coinReceiverIndex];
+            if (usersToSpreadCoins.ElementAt(coinReceiverIndex).Proportion >
+                spreadedCoinsAmounts[coinReceiverIndex] * coinWeight)
             {
-                usersToSpreadCoins.RemoveAt(coinReciverIndex);
-                spreadedCoinsAmounts.RemoveAt(coinReciverIndex);
+                usersToSpreadCoins.RemoveAt(coinReceiverIndex);
+                spreadedCoinsAmounts.RemoveAt(coinReceiverIndex);
             }
 
             --coinsToSpread;
