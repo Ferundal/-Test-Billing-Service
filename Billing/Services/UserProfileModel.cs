@@ -51,10 +51,6 @@ public class UserProfileModel
 
     public void EmitCoins(long coinsAmount)
     {
-        if (coinsAmount <= 0)
-        {
-            throw new RuntimeBinderException();
-        }
         while (--coinsAmount > 0)
         {
             _coins.AddFirst(new CoinModel(this));
