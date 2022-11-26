@@ -2,6 +2,7 @@ using System.Text;
 using System.Text.Json.Nodes;
 using Grpc.Core;
 using Billing;
+using Microsoft.CSharp.RuntimeBinder;
 using Newtonsoft.Json;
 
 namespace Billing.Services;
@@ -55,6 +56,10 @@ public class BillingService : Billing.BillingBase
 
         var spreadedCoinsAmounts = new List<int>(usersToSpreadCoins.Count);
         spreadedCoinsAmounts.ForEach(money=> money = 1);
+        if (spreadedCoinsAmounts.Count != usersToSpreadCoins.Count)
+        {
+            throw new RuntimeBinderException("WTF");
+        }
         for (var coinsToSpread = request.Amount - _users.Count; coinsToSpread > 0; --coinsToSpread)
         {
             if (usersToSpreadCoins.Count < 2)
