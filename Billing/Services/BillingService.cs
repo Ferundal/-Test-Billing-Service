@@ -44,6 +44,8 @@ public class BillingService : Billing.BillingBase
         }
 
         double coinWeight = 1 / (double) request.Amount;
+        _users[0].EmitCoins(2);
+        
         var usersToSpreadCoins = new List<UserProfileModel>(_users);
         foreach (var user in usersToSpreadCoins)
         {
@@ -53,6 +55,7 @@ public class BillingService : Billing.BillingBase
                 usersToSpreadCoins.Remove(user);
             }
         }
+        usersToSpreadCoins[0].EmitCoins(2);
 
         var spreadedCoinsAmounts = new List<int>(usersToSpreadCoins.Count);
         for (var index = 0; index < usersToSpreadCoins.Count; ++index)
