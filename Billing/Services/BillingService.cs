@@ -43,10 +43,10 @@ public class BillingService : Billing.BillingBase
         foreach (var user in usersToSpreadCoins)
         {
             user.EmitCoins(1);
-            if (user.Coins == 0)
-            {
-                throw new RuntimeBinderException();
-            }
+            // if (user.Coins == 0)
+            // {
+            //     throw new RuntimeBinderException();
+            // }
             if (user.Proportion < coinWeight)
             {
                 usersToSpreadCoins.Remove(user);
