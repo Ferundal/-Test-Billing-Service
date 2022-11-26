@@ -59,7 +59,7 @@ public class UserProfileModel
         }
         if (_coins.Count == 0)
         {
-            throw new RuntimeBinderException();
+            throw new RuntimeBinderException(_coins.Count.ToString() + "ERROR");
         }
     }
 
