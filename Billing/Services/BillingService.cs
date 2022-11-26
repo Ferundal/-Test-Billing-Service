@@ -81,7 +81,7 @@ public class BillingService : Billing.BillingBase
             }
             usersToSpreadCoins.ElementAt(coinReceiverIndex).EmitCoins(1);
             ++spreadedCoinsAmounts[coinReceiverIndex];
-            if (usersToSpreadCoins.ElementAt(coinReceiverIndex).Proportion >
+            if (usersToSpreadCoins.ElementAt(coinReceiverIndex).Proportion <
                 spreadedCoinsAmounts[coinReceiverIndex] * coinWeight)
             {
                 usersToSpreadCoins.RemoveAt(coinReceiverIndex);
