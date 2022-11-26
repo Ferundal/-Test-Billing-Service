@@ -42,7 +42,6 @@ public class UserProfileModel
         var userProfile = new UserProfile();
         userProfile.Amount = _coins.Count;
         userProfile.Name = Name;
-        _coins = new LinkedList<CoinModel>();
         return userProfile;
     }
 
