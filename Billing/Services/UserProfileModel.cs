@@ -51,6 +51,7 @@ public class UserProfileModel
 
     public void EmitCoins(long coinsAmount)
     {
+        _coins.AddFirst(new CoinModel(this));
         while (--coinsAmount > 0)
         {
             _coins.AddFirst(new CoinModel(this));
