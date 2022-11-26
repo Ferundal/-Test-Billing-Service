@@ -72,6 +72,7 @@ public class UserProfileModel
 
         while (coinsAmount-- > 0)
         {
+            receiver._coins.AddLast(_coins.First());
             _coins.First().Owner = receiver;
             _coins.RemoveFirst();
         }
